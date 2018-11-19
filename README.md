@@ -1,3 +1,5 @@
+![Image of planet-moon](planet-moon.png)
+
 # hedron-sketches
 A set of [Hedron](https://github.com/nudibranchrecords/hedron) sketches for a live show.
 
