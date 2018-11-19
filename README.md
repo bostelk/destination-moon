@@ -19,4 +19,4 @@ Start Hedron in the cloned repository.
 $ yarn start
 ```
 
-Load the **kbos** project from the repository once **Hedron** has loaded.
+Load the **planet-moon** project from the repository once **Hedron** has loaded.
