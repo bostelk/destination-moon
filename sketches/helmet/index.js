@@ -12,6 +12,10 @@ class Helmet {
     this.group = new THREE.Group()
     this.root.add(this.group)
 
+    this.map = new THREE.TextureLoader().load(__dirname+"\\textures\\diffuse.png");
+    this.map.wrapS = THREE.RepeatWrapping;
+    this.map.wrapT = THREE.RepeatWrapping;
+
     this.alphaMap = new THREE.TextureLoader().load(__dirname+"\\textures\\alpha.png");
     this.alphaMap.wrapS = THREE.RepeatWrapping;
     this.alphaMap.wrapT = THREE.RepeatWrapping;
@@ -21,6 +25,7 @@ class Helmet {
       ];
     this.meshes = [];
     this.basicMat = new THREE.MeshStandardMaterial({
+        map: this.map,
         envMap: this.scene.scene.background,
         envMapIntensity: params.envMapIntensity,
         alphaMap: this.alphaMap,

@@ -12,11 +12,16 @@ class Skull {
     this.group = new THREE.Group()
     this.root.add(this.group)
 
+    this.map = new THREE.TextureLoader().load(__dirname+"\\textures\\diffuse.png");
+    this.map.wrapS = THREE.RepeatWrapping;
+    this.map.wrapT = THREE.RepeatWrapping;
+
     var paths = [
       'skull.obj'
       ]
     this.meshes = [];
     this.basicMat = new THREE.MeshStandardMaterial({
+        map: this.map,
     });
 
     var loader = new THREE.OBJLoader();
