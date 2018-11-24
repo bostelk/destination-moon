@@ -1,9 +1,9 @@
 const THREE = require('three'),
   EffectComposer = require('three-effectcomposer')(THREE)
 const glsl = require('glslify')
-const frag = glsl.file('./bloom.glsl')
+const frag = glsl.file('./noise.glsl')
 
-class Bloom {
+class Noise {
 
   constructor(scene, meta, params) {
     var vert = "varying vec2 local;\n" +
@@ -12,7 +12,7 @@ class Bloom {
       "	gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);\n" +
       "}";
 
-    this.bloom = new EffectComposer.ShaderPass({
+    this.noise = new EffectComposer.ShaderPass({
       uniforms: {
         iChannel0: {
           type: "t",
@@ -36,18 +36,18 @@ class Bloom {
 
     }, "iChannel0");
 
-    scene.addPost(this.bloom);
+    scene.addPost(this.noise);
     this.scene = scene;
 
   }
 
   destructor(scene){
-    scene.removePost(this.bloom);
+    scene.removePost(this.noise);
   }
 
   update(params, time, delta, allParams) {
-    this.bloom.uniforms.intensity.value = params.intensity;
-    this.bloom.uniforms.iTime.value = params.phase;
+    this.noise.uniforms.intensity.value = params.intensity;
+    this.noise.uniforms.iTime.value = time;
 
     let size = this.scene.renderer.getSize();
     this.noise.uniforms.iResolution.width = size.width;
@@ -59,4 +59,4 @@ class Bloom {
 /** HEDRON TIP **
   Class must be exported as a default.
 **/
-module.exports = Bloom
+module.exports = Noise
