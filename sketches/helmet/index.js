@@ -1,9 +1,7 @@
 const THREE = require('three')
 const OBJLoader = require('../../shared/OBJLoader')
+const SHARED = require('../../shared/shared')
 
-const lerp = (v0, v1, t) => {
-    return (1 - t) * v0 + t * v1
-}
 class Helmet {
 
   constructor (scene, params) {
@@ -53,6 +51,12 @@ class Helmet {
     this.basicMat.displacementBias = params.displacementBias;
     this.basicMat.envMapIntensity = params.envMapIntensity;
     this.basicMat.opacity = params.opacity;
+
+    if (SHARED.envMapDynamic) {
+          this.basicMat.envMap = SHARED.envMapDynamic;
+    } else {
+          this.basicMat.envMap = this.scene.scene.background;
+    }
 
     this.group.position.x = params.posX
     this.group.position.y = params.posY

@@ -4,7 +4,7 @@
 
 module.exports = {
   // Default title when sketch is loaded in (can be changed by user)
-  defaultTitle: 'Environment',
+  defaultTitle: 'Cube Camera',
   // Params are values between 0 and 1 that can be manipulated by the user
   // these values are sent to the sketch every frame
   // e.g. , scale, colour
@@ -14,12 +14,8 @@ module.exports = {
   // e.g. Explosions, Pre-defined animations
   shots: [
     {
-      method: 'pisaMap', // needs to be unique
-      title: 'Pisa' // should be human
-    },
-    {
-      method: 'skyMap', // needs to be unique
-      title: 'Sky' // should be human
+      method: 'togglevisible', // needs to be unique
+      title: 'Visible' // should be human
     },
   ]
 }
