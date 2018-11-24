@@ -33,9 +33,9 @@ module.exports = {
     {
       key: 'scale',
       title: 'Scale',
-      defaultValue: 0.5,
+      defaultValue: 1,
             defaultMin: .00001,
-            defaultMax: 1000
+            defaultMax: 1500
     },
     {
       key: 'posX',
@@ -51,19 +51,19 @@ module.exports = {
     },
     {
       key: 'posZ',
-      defaultValue: 0,
-            defaultMin: 1,
+      defaultValue: 0.127,
+            defaultMin: -1000,
             defaultMax: 64
     },
     {
       key: 'metalness',
-      defaultValue: 0.0,
+      defaultValue: 0.5,
             defaultMin: 0,
             defaultMax: 1
     },
     {
       key: 'roughness',
-      defaultValue: 0.608,
+      defaultValue: 0.137,
             defaultMin: 0,
             defaultMax: 1
     },

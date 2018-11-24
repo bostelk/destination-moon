@@ -12,14 +12,14 @@ module.exports = {
     {
       key: 'rotX', // needs to be unique
       title: 'Rotation X', // should be human
-      defaultValue: 0,
+      defaultValue: 0.022,
             defaultMin:0,
             defaultMax:6.2831853
     },
     {
       key: 'rotY',
       title: 'Rotation  Y',
-      defaultValue: 0,
+      defaultValue: 0.5,
             defaultMin:0,
             defaultMax:6.2831853
     },
@@ -33,7 +33,7 @@ module.exports = {
     {
       key: 'scale',
       title: 'Scale',
-      defaultValue: 0.5,
+      defaultValue: 0.066,
             defaultMin: .00001,
             defaultMax: 1000
     },
@@ -45,15 +45,15 @@ module.exports = {
     },
     {
       key: 'posY',
-      defaultValue: 0,
+      defaultValue: 0.387,
             defaultMin: 1,
             defaultMax: 64
     },
     {
       key: 'posZ',
-      defaultValue: 0,
-            defaultMin: 1,
-            defaultMax: 64
+      defaultValue: 1,
+            defaultMin: -500,
+            defaultMax: 500
     },
     {
       key: 'phase', // needs to be unique

@@ -12,70 +12,70 @@ module.exports = {
     {
       key: 'rotX', // needs to be unique
       title: 'Rotation X', // should be human
-      defaultValue: 0,
+      defaultValue: 0.137,
             defaultMin:0,
             defaultMax:6.2831853
     },
     {
       key: 'rotY',
       title: 'Rotation  Y',
-      defaultValue: 0,
+      defaultValue: 1,
             defaultMin:0,
             defaultMax:6.2831853
     },
     {
       key: 'rotZ',
       title: 'Rotation  Z',
-      defaultValue: 0,
+      defaultValue: 1,
             defaultMin:0,
             defaultMax:6.2831853
     },
     {
       key: 'scale',
       title: 'Scale',
-      defaultValue: 0.5,
+      defaultValue: 0.424,
             defaultMin: .00001,
             defaultMax: 1000
     },
     {
       key: 'posX',
-      defaultValue: 0,
-            defaultMin: 1,
-            defaultMax: 64
+      defaultValue: 0.306,
+            defaultMin: -500,
+            defaultMax: 1000
     },
     {
       key: 'posY',
-      defaultValue: 0,
-            defaultMin: 1,
+      defaultValue: 0.217,
+            defaultMin: -1000,
             defaultMax: 64
     },
     {
       key: 'posZ',
       defaultValue: 0,
-            defaultMin: 1,
+            defaultMin: -500,
             defaultMax: 64
     },
     {
       key: 'metalness',
-      defaultValue: 0.0,
+      defaultValue: 0.540,
             defaultMin: 0,
             defaultMax: 1
     },
     {
       key: 'roughness',
-      defaultValue: 0.608,
+      defaultValue: 0.474,
             defaultMin: 0,
             defaultMax: 1
     },
     {
       key: 'displacementScale',
-      defaultValue: 0.045,
+      defaultValue: 0.0,
             defaultMin: 0,
             defaultMax: 1
     },
     {
       key: 'displacementBias',
-      defaultValue: 0.389,
+      defaultValue: 0.0,
             defaultMin: -1,
             defaultMax: 1
     }
