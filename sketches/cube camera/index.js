@@ -6,7 +6,11 @@ class CubeCamera {
     constructor (scene, params) {
         this.scene = scene;
 
-        this.cubeCamera = new THREE.CubeCamera( 1, 1000, 256 );
+        var near = this.scene.camera.near;
+        var far = this.scene.camera.far;
+        var resolution = 256;
+
+        this.cubeCamera = new THREE.CubeCamera( near, far, resolution );
         this.cubeCamera.renderTarget.texture.generateMipmaps = true;
         this.cubeCamera.renderTarget.texture.minFilter = THREE.LinearMipMapLinearFilter;
         this.cubeCamera.visible = true;

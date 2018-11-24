@@ -1,4 +1,5 @@
 const THREE = require('three')
+const SHARED = require('../../shared/shared')
 
 class ReflectiveBall {
 
@@ -18,8 +19,11 @@ class ReflectiveBall {
   }
 
   update (params, time, frameDiff, allParams) {
-    // threejs scene...
-    this.material.envMap = this.scene.scene.background;
+    if (SHARED.envMapDynamic) {
+          this.material.envMap = SHARED.envMapDynamic;
+    } else {
+          this.material.envMap = this.scene.scene.background;
+    }
 
     this.group.position.x = params.posX
     this.group.position.y = params.posY
