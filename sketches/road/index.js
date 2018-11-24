@@ -18,6 +18,7 @@ class Road {
     this.diffuse = new THREE.TextureLoader().load(__dirname+"\\textures\\diffuse.png");
     this.diffuse.wrapS = THREE.RepeatWrapping;
     this.diffuse.wrapT = THREE.RepeatWrapping;
+    this.diffuse.anisotropy = 4;
 
     var paths = [
       'road.obj'
