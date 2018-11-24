@@ -15,14 +15,21 @@ class CubeCamera {
         this.cubeCamera.renderTarget.texture.minFilter = THREE.LinearMipMapLinearFilter;
         this.cubeCamera.visible = true;
 
-        SHARED.envMapDynamic = this.cubeCamera.renderTarget.texture;
-
         // The second scene is the threejs scene.
         this.scene.scene.add( this.cubeCamera );
     }
 
+    destructor(scene){
+        SHARED.envMapDynamic = undefined;
+    }
+
     togglevisible() {
         this.cubeCamera.visible = !this.cubeCamera.visible;
+    }
+
+    update (params, time, frameDiff, allParams) {
+        this.cubeCamera.update(this.scene.renderer,this.scene.scene);
+        this.cubeCamera.position.copy( this.scene.camera.position );
 
         if (this.cubeCamera.visible)
         {
@@ -30,11 +37,6 @@ class CubeCamera {
         } else {
             SHARED.envMapDynamic = undefined;
         }
-    }
-
-    update (params, time, frameDiff, allParams) {
-        this.cubeCamera.update(this.scene.renderer,this.scene.scene);
-        this.cubeCamera.position.copy( this.scene.camera.position );
     }
 }
 
