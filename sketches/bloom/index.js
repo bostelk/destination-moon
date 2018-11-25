@@ -50,8 +50,8 @@ class Bloom {
     this.bloom.uniforms.iTime.value = params.phase;
 
     let size = this.scene.renderer.getSize();
-    this.noise.uniforms.iResolution.width = size.width;
-    this.noise.uniforms.iResolution.height = size.height;
+    this.bloom.uniforms.iResolution.value.width = size.width;
+    this.bloom.uniforms.iResolution.value.height = size.height;
   }
 
 }

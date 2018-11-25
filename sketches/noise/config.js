@@ -22,6 +22,20 @@ module.exports = {
       defaultMax:6.28,
       hidden:false
     },
+    {
+      key: 'scale', // needs to be unique
+      defaultValue: 0.4, // should be human
+      defaultMin:0.0,
+      defaultMax:10.0,
+      hidden:false
+    },
+    {
+      key: 'amount', // needs to be unique
+      defaultValue: 0.15, // should be human
+      defaultMin:0.0,
+      defaultMax:0.01,
+      hidden:false
+    },
   ],
 
   shots: [
