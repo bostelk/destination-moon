@@ -2,8 +2,6 @@ const THREE = require('three'),
   EffectComposer = require('three-effectcomposer')(THREE)
 const glsl = require('glslify')
 const frag = glsl.file('./noise.glsl')
-require('../../shared/shaders/DotScreenShader')(THREE)
-require('../../shared/shaders/RGBShiftShader')(THREE)
 
 class Noise {
 
@@ -38,13 +36,7 @@ class Noise {
 
     }, "iChannel0");
 
-    this.dotScreen = new EffectComposer.ShaderPass( THREE.DotScreenShader );
-    this.dotScreen.uniforms.scale.value = 4.0;
-
-    this.effect = new EffectComposer.ShaderPass( THREE.RGBShiftShader );
-    this.effect.uniforms[ 'amount' ].value = 0.0015;
-
-    scene.addPost(this.effect);
+    scene.addPost(this.noise);
     this.scene = scene;
   }
 
@@ -59,8 +51,6 @@ class Noise {
     let size = this.scene.renderer.getSize();
     this.noise.uniforms.iResolution.value.width = size.width;
     this.noise.uniforms.iResolution.value.height = size.height;
-
-    this.effect.uniforms.amount.value = params.amount;
   }
 
 }
