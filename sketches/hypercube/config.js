@@ -59,7 +59,7 @@ module.exports = {
       key: 'phase', // needs to be unique
       defaultValue: 0.5, // should be human
       defaultMin:0,
-      defaultMax:6.28,
+      defaultMax:10,
     },
   ],
   // Shots are single functions that can fire, as opposed to values that change
